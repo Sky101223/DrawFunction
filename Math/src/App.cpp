@@ -16,9 +16,9 @@ int main(void)
     drawAxis();
 
     // »æÖÆº¯Êý
+    drawMathFunction(linearFunction, -0.232, -9);
     drawMathFunction(quadraticFunction, 0.025, -1.3, 3.3209);
     drawMathFunction(inverseProportionalFunction, 1000);
-    drawMathFunction(linearFunction, -0.232, -9);
 
     _getch();
     closegraph();
