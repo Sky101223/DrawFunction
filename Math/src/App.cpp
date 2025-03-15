@@ -1,7 +1,6 @@
 #include <graphics.h>
 
 #include <conio.h>
-#include <math.h>
 #include <stdint.h>
 
 #include "Base.h"

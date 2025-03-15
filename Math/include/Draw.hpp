@@ -2,7 +2,6 @@
 
 #include <thread>
 #include <chrono>
-#include <cmath>
 #include "Base.h"
 
 void drawAxis(const float& _size = 1)
