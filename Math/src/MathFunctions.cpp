@@ -1,6 +1,6 @@
-#include "MathFunction.h"
+#include "MathFunctions.h"
 
-FUNCTION_RETURN_VALUE_TYPE linearFunction(const double& k,
+MATH_FUNCTION_RETURN_VALUE_TYPE linearFunction(const double& k,
     const double& b,
     const double& x
 ) {
@@ -8,7 +8,7 @@ FUNCTION_RETURN_VALUE_TYPE linearFunction(const double& k,
     return k * x + b;
 }
 
-FUNCTION_RETURN_VALUE_TYPE quadraticFunction(const double& a,
+MATH_FUNCTION_RETURN_VALUE_TYPE quadraticFunction(const double& a,
     const double& b,
     const double& c,
     const double& x
@@ -17,7 +17,7 @@ FUNCTION_RETURN_VALUE_TYPE quadraticFunction(const double& a,
     return a * std::pow(x, 2) + b * x + c;
 }
 
-FUNCTION_RETURN_VALUE_TYPE quadraticFunction_Vertex(const double& a,
+MATH_FUNCTION_RETURN_VALUE_TYPE quadraticFunction_Vertex(const double& a,
     const double& h,
     const double& k,
     const double& x
@@ -26,7 +26,7 @@ FUNCTION_RETURN_VALUE_TYPE quadraticFunction_Vertex(const double& a,
     return a * std::pow((x + h), 2) + k;
 }
 
-FUNCTION_RETURN_VALUE_TYPE inverseProportionalFunction(const double& k,
+MATH_FUNCTION_RETURN_VALUE_TYPE inverseProportionalFunction(const double& k,
     const double& x
 ) {
     assert(k != 0);

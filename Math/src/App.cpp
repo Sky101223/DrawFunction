@@ -6,7 +6,8 @@
 #include <Windows.h>
 
 #include "Base.h"
-#include "MathFunction.h"
+
+#include "MathFunctions.h"
 #include "Draw.hpp"
 
 int main(void)
@@ -17,10 +18,10 @@ int main(void)
     drawAxis();
 
     // 绘制函数
-    drawMathFunction(linearFunction, -0.232, -9); // 一次函数
-    drawMathFunction(quadraticFunction, 0.025, -1.3, 3.3209); // 二次函数
-    drawMathFunction(inverseProportionalFunction, 1000); // 反比例函数
-
+    drawMathFunction(linearFunction, 1, 0); // 一次函数
+    drawMathFunction(quadraticFunction, -0.33, -3.1, 15.3259); // 二次函数
+    drawMathFunction(inverseProportionalFunction, 10); // 反比例函数
+    
     // 消息窗口
     MessageBox(
         NULL,
