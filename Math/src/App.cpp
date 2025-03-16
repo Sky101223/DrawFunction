@@ -2,6 +2,7 @@
 
 #include <conio.h>
 #include <stdint.h>
+#include <tchar.h>
 
 #include <Windows.h>
 
@@ -17,10 +18,23 @@ int main(void)
     // 建立平面直角坐标其XoY
     drawAxis();
 
+    // 自定义反比例函数k值
+    TCHAR inputText[100];
+    // 输入框
+    InputBox(
+        inputText,
+        100,
+        _T("请输入反比例函数k的值"),
+        _T("自定义反比例函数k值"),
+        _T("1")
+    );
+
+    double k = _tcstod(inputText, nullptr);
+
     // 绘制函数
     drawMathFunction(linearFunction, 1, 0); // 一次函数
     drawMathFunction(quadraticFunction, -0.33, -3.1, 15.3259); // 二次函数
-    drawMathFunction(inverseProportionalFunction, 10); // 反比例函数
+    drawMathFunction(inverseProportionalFunction, k); // 反比例函数
     
     // 消息窗口
     MessageBox(
