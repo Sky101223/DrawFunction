@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Base.cpp" />
     <ClCompile Include="src\MathFunctions.cpp" />
     <ClCompile Include="src\App.cpp" />
   </ItemGroup>

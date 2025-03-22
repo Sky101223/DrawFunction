@@ -4,7 +4,7 @@
 #include <chrono>
 #include "Base.h"
 
-void drawAxis(const float& _size = 1)
+DRAW_FUNCTION_NO_RETURN drawAxis(CONST FLOAT& _size = 1.0f)
 {
     setbkcolor(WHITE);
     cleardevice();
@@ -19,19 +19,19 @@ void drawAxis(const float& _size = 1)
 }
 
 template <typename _MathFunction, typename... _Args>
-void drawMathFunction(_MathFunction _f, const _Args&... _args)
+DRAW_FUNCTION_NO_RETURN drawMathFunction(_MathFunction _f, CONST _Args&... _args)
 {
-    const uint16_t X = 0;
-    const uint16_t Y = 1;
+    CONST USHORT X = 0;
+    CONST USHORT Y = 1;
     setlinecolor(RED);
+    
+    INT localPoint[2]{};
+    INT nextPoint[2]{};
 
-    int32_t localPoint[2]{};
-    int32_t nextPoint[2]{};
-
-    auto isInvalidPoint = [&](int32_t pixelX) -> bool
+    auto isInvalidPoint = [&](INT pixelX) -> bool
         {
-            double mathX = pixelX / SCALE;
-            double mathX_next = (pixelX + 1) / SCALE;
+            DOUBLE mathX = pixelX / SCALE;
+            DOUBLE mathX_next = (pixelX + 1) / SCALE;
             return std::isinf(_f(_args..., mathX)) || std::isinf(_f(_args..., mathX_next));
         };
 
@@ -42,12 +42,12 @@ void drawMathFunction(_MathFunction _f, const _Args&... _args)
             continue;
         }
 
-        double mathX = localPoint[X] / SCALE;
-        double mathX_next = (localPoint[X] + 1) / SCALE;
+        DOUBLE mathX = localPoint[X] / SCALE;
+        DOUBLE mathX_next = (localPoint[X] + 1) / SCALE;
 
-        localPoint[Y] = -(static_cast<int32_t>(_f(_args..., mathX) * SCALE));
+        localPoint[Y] = -(static_cast<INT>(_f(_args..., mathX) * SCALE));
         nextPoint[X] = localPoint[X] + 1;
-        nextPoint[Y] = -(static_cast<int32_t>(_f(_args..., mathX_next) * SCALE));
+        nextPoint[Y] = -(static_cast<INT>(_f(_args..., mathX_next) * SCALE));
 
         putpixel(localPoint[X], localPoint[Y], RED);
         putpixel(nextPoint[X], nextPoint[Y], RED);

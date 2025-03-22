@@ -24,17 +24,18 @@ int main(void)
     InputBox(
         inputText,
         100,
-        _T("请输入反比例函数k的值"),
-        _T("自定义反比例函数k值"),
-        _T("1")
+        _T("请输入一个单位长度为多少个像素"),
+        _T("自定义单位长度"),
+        _T("10.0")
     );
 
-    double k = _tcstod(inputText, nullptr);
+    // 初始化外部变量
+    g_setScale(_tcstod(inputText, nullptr));
 
     // 绘制函数
-    drawMathFunction(linearFunction, 1, 0); // 一次函数
+    drawMathFunction(linearFunction, 12, 0); // 一次函数
     drawMathFunction(quadraticFunction, -0.33, -3.1, 15.3259); // 二次函数
-    drawMathFunction(inverseProportionalFunction, k); // 反比例函数
+    drawMathFunction(inverseProportionalFunction, 2); // 反比例函数
     
     // 消息窗口
     MessageBox(

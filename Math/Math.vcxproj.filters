@@ -21,6 +21,9 @@
     <ClCompile Include="src\MathFunctions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Base.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Base.h">

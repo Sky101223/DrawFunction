@@ -9,13 +9,16 @@
 #include <assert.h>
 #include <cmath>
 
-constexpr int32_t WIDTH = 800;
-constexpr int32_t HEIGHT = 600;
-constexpr int32_t HALF_WIDTH = WIDTH / 2;
-constexpr int32_t HALF_HEIGHT = HEIGHT / 2;
-constexpr double_t SCALE = 10.0;
+#define WIDTH			800
+#define HEIGHT			600
+#define HALF_WIDTH		400
+#define HALF_HEIGHT		300
 
-using MATH_FUNCTION_RETURN_VALUE_TYPE = double;
-using DRAW_FUNCTION_NO_RETURN = void;
+extern DOUBLE SCALE;
+
+typedef VOID			EMPTY_PARAMETER_LIST, DRAW_FUNCTION_NO_RETURN;
+typedef DOUBLE			MATH_FUNCTION_RETURN_VALUE_TYPE;
 
 #define LOG(message) std::cout << message << std::endl
+
+VOID g_setScale(CONST DOUBLE& _value);
